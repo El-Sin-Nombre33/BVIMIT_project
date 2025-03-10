@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // This step checks out the code from your Git repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Replace this with the commands to build your project
+                echo 'Building project...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Replace this with the commands to run tests
+                echo 'Running tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Replace this with deployment commands
+                echo 'Deploying project...'
+            }
+        }
+    }
+    
+    post {
+        always {
+            // This block runs after the pipeline finishes, regardless of success or failure
+            echo 'Cleaning up...'
+        }
+    }
+}
